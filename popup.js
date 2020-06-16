@@ -1,20 +1,19 @@
 let pasteUrls = document.getElementById('pasteUrls');
 let copiedUrls = document.getElementById('copiedUrls');
 let openInTabs = document.getElementById('openInTabs');
-let urls = "";
+let urls = [];
 
 pasteUrls.onclick = function(element) {
     copiedUrls.focus();
     document.execCommand('paste');
 
     urls = copiedUrls.value.split('\n');
-    var buttonText = openInTabs.innerText;
-    buttonText += "(" + tabs.length + ")";
-    // alert(buttonText);
-    openInTabs.innerText = buttonText;
+    // var buttonText = openInTabs.innerText;
+    // buttonText += "(" + tabs.length + ")";
+    // // alert(buttonText);
+    // openInTabs.innerText = buttonText;
+    openInTabs.click();
 };
-
-
 
 function onCreated(tab) {
     console.log(`Created new tab: ${tab.url}`);

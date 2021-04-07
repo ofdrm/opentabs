@@ -24,6 +24,7 @@ function onError(error) {
 }
 
 openInTabs.onclick = function(element) {
+    urls = copiedUrls.value.split('\n');
     urls.forEach(url => {
         var creating = browser.tabs.create({
            url: url 
